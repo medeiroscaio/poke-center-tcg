@@ -1,10 +1,9 @@
-
-import Login from "./Login/Login"
+import AppRoutes from "./AppRoutes.jsx";
 
 
 function App() {
   return (
-    <Login/>
+    <AppRoutes/>
   );
 }
 
