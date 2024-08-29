@@ -1,61 +1,65 @@
 .status {
-    padding: 6.5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #fff;
+  padding: 6.5px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  width: 110px;
+  color: #fff;
 }
 
 .in-stock {
-    background-color: #9fba97;
-    color: #528844;
+  background-color: #9fba97;
+  color: #528844;
 }
 
 .low-stock {
-    background-color: #fdd39c;
-    color: #c77415;
+  background-color: #fdd39c;
+  color: #c77415;
 }
 
 .out-of-stock {
-    background-color: #dad8db;
-    color: #5d565f;
+  background-color: #dad8db;
+  color: #5d565f;
 }
 
-.edit-btn, .delete-btn {
-    padding: 6.5px 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-right: 5px;
-    transition: background-color 0.3s ease;
+.edit-btn,
+.delete-btn {
+  padding: 6.5px 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+  padding-bottom: 2px;
 }
 
 .edit-btn {
-    background-color: #9fba97;
-    color: #fff;
+  background-color: #9fba97;
+  color: #fff;
 }
 
 .edit-btn:hover {
-    background-color: #6dca50;
+  background-color: #6dca50;
 }
 
 .delete-btn {
-    background-color: #c39e9e;
-    color: #fff;
+  background-color: #c39e9e;
+  color: #fff;
 }
 
 .delete-btn:hover {
-    background-color: #d32f2f;
+  background-color: #d32f2f;
 }
 
 .item-table td {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-    color: #555;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  color: #555;
 }
 
-.new-price{
-    color: green;
+.new-price {
+  color: green;
 }

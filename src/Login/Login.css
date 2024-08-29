@@ -6,8 +6,8 @@
   font-weight: 400;
 }
 
-#loginContainer{
-  Height: 100vh;
+#loginContainer {
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,20 +17,22 @@
   background-repeat: no-repeat;
 }
 
-#loginForm{
+#loginForm {
   backdrop-filter: blur(20px);
   border-radius: 25px;
   border: 2px solid white;
   color: white;
   padding: 50px 20px;
 
-
-  h1, label, button{
+  h1,
+  label,
+  button {
     text-align: center;
     font-weight: bold;
   }
 
-  #emailInput, #passwordInput{
+  #emailInput,
+  #passwordInput {
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 5%;
@@ -40,7 +42,7 @@
     padding: 1% 2%;
     font-size: 16px;
   }
-  button{
+  button {
     border: none;
     color: grey;
     background-color: aquamarine;
@@ -50,10 +52,8 @@
     float: right;
     transition: 0.4s;
   }
+  button:hover {
+    scale: 1.1;
+    filter: drop-shadow(0px 0px 5px aquamarine);
+  }
 }
-
-button:hover{
-  scale: 1.1;
-  filter: drop-shadow(0px 0px 5px aquamarine);
-}
-

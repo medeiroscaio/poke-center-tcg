@@ -7,8 +7,8 @@ function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/Login" element={<Login />}></Route>
+        <Route path="/Admin" element={<Controller />}></Route>
         <Route path="*" element={<Navigate to="/Login" />}></Route>
-          <Route path="/Admin" element={<Controller/>}></Route>
       </Routes>
     </BrowserRouter>
   );
