@@ -1,8 +1,22 @@
-# React + Vite
+<div align="center">
+  
+# Poke-Center-TCG
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PokeCenter-TCG, se trata de um projeto voltado para a comercialização do Trading Card Game (TCG) da serie Pokemon.
 
-Currently, two official plugins are available:
+## Principais Tecnoligias:
+[![My Skills](https://skillicons.dev/icons?i=,nodejs,vite,js,html,css,react,express&theme=dark)](https://skillicons.dev)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Objetivo
+
+Desenvolver uma plataforma de comércio eletrônico especializada na compra e venda de cartas TCG de Pokémon, oferecendo uma interface intuitiva e rica em funcionalidades para atender tanto colecionadores quanto jogadores, facilitando o acesso a cartas raras e de diferentes edições.
+
+
+## Finalidade
+
+Criar um ambiente confiável e seguro para transações de cartas TCG de Pokémon.
+Oferecer funcionalidades que melhorem a experiência do usuário, como recomendações de cartas, filtros avançados e um sistema de carrinho de compras eficiente. 
+Permitir que usuários gerenciem suas coleções e encontrem facilmente as cartas que desejam adquirir ou vender.
+
+
+</div>
