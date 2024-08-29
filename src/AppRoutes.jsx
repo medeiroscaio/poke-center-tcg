@@ -1,14 +1,14 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "./Login/Login.jsx";
-import Table from "./Table/Table.jsx";
+import Controller from "./Controller/Controller.jsx";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/Login" element={<Login />}></Route>
-        <Route path="/Table" element={<Table />}></Route>
         <Route path="*" element={<Navigate to="/Login" />}></Route>
+          <Route path="/Admin" element={<Controller/>}></Route>
       </Routes>
     </BrowserRouter>
   );
