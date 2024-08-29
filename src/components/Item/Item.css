@@ -8,6 +8,12 @@
   color: #fff;
 }
 
+.card-icon {
+  aspect-ratio: initial;
+  width: 75px;
+  object-fit: cover;
+}
+
 .in-stock {
   background-color: #9fba97;
   color: #528844;

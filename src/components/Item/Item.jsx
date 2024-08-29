@@ -6,7 +6,7 @@ function Item() {
   return (
     <>
       <tr>
-        <td>1</td>
+        <td><img className="card-icon" src="https://assets.tcgdex.net/en/ex/ex3/1/high.png"/></td>
         <td>Bulbasaur</td>
         <td>
           <span className="status in-stock">Em Estoque</span>

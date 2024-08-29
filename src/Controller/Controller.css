@@ -15,7 +15,7 @@
 
 #side-bar {
   display: flex;
-  position: relative;
+  position: fixed;
   flex-direction: column;
   justify-content: center;
   align-items: center;
