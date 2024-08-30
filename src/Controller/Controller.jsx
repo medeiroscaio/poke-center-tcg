@@ -5,6 +5,7 @@ import {IoIosRadioButtonOn} from "react-icons/io";
 import { PiTrashFill } from "react-icons/pi";
 import "./Controller.css"
 import Table from "../Table/Table.jsx";
+import Dashboard from "../Dashboard/Dashboard.jsx";
 
 function Controller() {
 
@@ -20,7 +21,8 @@ function Controller() {
                 <button onClick={() => setView(5)}><PiTrashFill/></button>
             </div>
             <div id="content">
-                {view === 1 ? <Table/> : ""}
+                {view === 1 ? <Dashboard/> : ""}
+                {view === 2 ? <Table/> : ""}
             </div>
         </div>
     )
