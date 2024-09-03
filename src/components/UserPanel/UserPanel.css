@@ -1,0 +1,19 @@
+.user-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+#hour {
+  margin-right: 10px;
+}
+
+#user-icon {
+  font-size: 25px;
+}

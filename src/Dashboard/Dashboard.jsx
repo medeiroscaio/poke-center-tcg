@@ -1,14 +1,11 @@
 import "./Dashboard.css";
-import Item from "../components/Item/Item.jsx";
-import { IoIosAdd } from "react-icons/io";
+import Container from "../components/Container/container.jsx";
 
 function Dashboard() {
   return (
-    <div className="page-container"> 
-      <div className="table-container">
-        
-      </div>
-    </div>
+    <Container>
+      <h1>Dashboard</h1>
+    </Container>
   );
 }
 
