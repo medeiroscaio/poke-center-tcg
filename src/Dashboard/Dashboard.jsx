@@ -6,10 +6,10 @@ import { Chart } from "react-google-charts";
 export const columnData = [
   ["Rarity", "Outputs", { role: "style" }],
   ["Commom", 30, "#b87333"],
-  ["Incommom", 20, "silver"], 
+  ["Incommom", 20, "silver"],
   ["Rare", 15, "gold"],
   ["Promocional", 10, "color: #e5e4e2"],
-  ["Ultra rare", 5, "color: #996053"]
+  ["Ultra rare", 5, "color: #996053"],
 ];
 
 export const pieData = [
@@ -23,6 +23,7 @@ export const pieData = [
 
 export const pieOptions = {
   title: "Cards in Stock",
+  is3D: true,
 };
 
 export function ColumnChartComponent() {
@@ -44,6 +45,7 @@ export function PieChartComponent() {
       options={pieOptions}
       width="100%"
       height="400px"
+      is3D:true
     />
   );
 }
