@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.square {
+  width: 120px;
+  height: 120px;
+  background-color: #3498db;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.charts-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.chart {
+  flex: 1;
+  margin: 10px;
+  min-width: 0;
+}
