@@ -1,16 +1,27 @@
 import "./Table.css";
 import Item from "../components/Item/Item.jsx";
+import SearchBar from "../components/SearchBar/SearchBar.jsx";
+import { useState } from "react";
 import { IoIosAdd } from "react-icons/io";
 import Container from "../components/Container/container.jsx";
 
 function Table() {
+  
+  const [search, setSearch] = useState('');
+
   return (
     <Container>
       <div className="table-header">
         <h2>Cards</h2>
-        <div className="table-header-btns">
-          <button className="header-btn">Cadastrar Cartas + </button>
-          <button className="header-btn">Recuperar Cartas</button>
+        <div className="header-end">
+          <div className="table-header-btns">
+            <button className="header-btn">Cadastrar Cartas + </button>
+            <button className="header-btn">Recuperar Cartas</button>
+          </div>
+          <div className="table-search-bar">
+            {/* <button className="header-btn search-btn">Filtrar</button> */}
+            <SearchBar onSearch={setSearch} />
+          </div>
         </div>
       </div>
       <table className="item-table">
@@ -26,7 +37,7 @@ function Table() {
           </tr>
         </thead>
         <tbody>
-          <Item />
+          <Item searchFilter={search} />
         </tbody>
       </table>
     </Container>

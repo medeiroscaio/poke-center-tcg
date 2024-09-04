@@ -2,119 +2,105 @@ import "./Item.css";
 import { FiEdit3 } from "react-icons/fi";
 import { MdDeleteOutline } from "react-icons/md";
 
-function Item() {
+const items = [
+  {
+    id: 1,
+    name: "Bulbasaur",
+    stockStatus: "em-estoque",
+    quantity: 20,
+    price: "10,00 R$",
+    priceNew: "",
+    purchaseDate: "2024-06-12",
+    hasDiscount: false,
+  },
+  {
+    id: 2,
+    name: "Charmander",
+    stockStatus: "em-estoque",
+    quantity: 18,
+    price: "10,00 R$",
+    priceNew: "vinte mil dolares",
+    purchaseDate: "2024-06-12",
+    hasDiscount: false,
+  },
+  {
+    id: 3,
+    name: "Squirtle",
+    stockStatus: "baixo-estoque",
+    quantity: 8,
+    price: "10,00 R$",
+    priceNew: "",
+    purchaseDate: "2024-06-12",
+    hasDiscount: false,
+  },
+  {
+    id: 4,
+    name: "Caterpie",
+    stockStatus: "sem-estoque",
+    quantity: 0,
+    price: "10,00 R$",
+    priceNew: "",
+    purchaseDate: "2024-06-12",
+    hasDiscount: false,
+  },
+  {
+    id: 5,
+    name: "Pikachu",
+    stockStatus: "baixo-estoque",
+    quantity: 5,
+    price: "10,00 R$",
+    priceNew: "6,00 R$",
+    purchaseDate: "2024-06-12",
+    hasDiscount: true,
+  },
+  {
+    id: 6,
+    name: "Onyx",
+    stockStatus: "baixo-estoque",
+    quantity: 9,
+    price: "10,00 R$",
+    priceNew: "",
+    purchaseDate: "2024-06-12",
+    hasDiscount: false,
+  },
+];
+
+function Item({ searchFilter = "" }) {
+  const filteredItems = items.filter((item) =>
+    item.name.toLowerCase().includes(searchFilter.toLowerCase())
+  );
+
   return (
     <>
-      <tr>
-        <td><img className="card-icon" src="https://assets.tcgdex.net/en/ex/ex3/1/high.png"/></td>
-        <td>Bulbasaur</td>
-        <td>
-          <span className="status in-stock">Em Estoque</span>
-        </td>
-        <td>20</td>
-        <td>10,00 R$</td>
-        <td>2024-06-12</td>
-        <td>
-          <button className="edit-btn">
-            <FiEdit3 />
-          </button>
-          <button className="delete-btn">
-            <MdDeleteOutline />
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Charmander</td>
-        <td>
-          <span className="status in-stock">Em Estoque</span>
-        </td>
-        <td>18</td>
-        <td>10,00 R$</td>
-        <td>2024-06-12</td>
-        <td>
-          <button className="edit-btn">
-            <FiEdit3 />
-          </button>
-          <button className="delete-btn">
-            <MdDeleteOutline />
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Squirtle</td>
-        <td>
-          <span className="status low-stock">Estoque Baixo</span>
-        </td>
-        <td>8</td>
-        <td>10,00 R$</td>
-        <td>2024-06-12</td>
-        <td>
-          <button className="edit-btn">
-            <FiEdit3 />
-          </button>
-          <button className="delete-btn">
-            <MdDeleteOutline />
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Caterpie</td>
-        <td>
-          <span className="status out-of-stock">Sem Estoque</span>
-        </td>
-        <td>0</td>
-        <td>10,00 R$</td>
-        <td>2024-06-12</td>
-        <td>
-          <button className="edit-btn">
-            <FiEdit3 />
-          </button>
-          <button className="delete-btn">
-            <MdDeleteOutline />
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>Pikachu</td>
-        <td>
-          <span className="status low-stock">Estoque Baixo</span>
-        </td>
-        <td>5</td>
-        <td>
-          <del>10,00 R$</del> <span className="new-price">&nbsp; 6,00 R$</span>
-        </td>
-        <td>2024-06-12</td>
-        <td>
-          <button className="edit-btn">
-            <FiEdit3 />
-          </button>
-          <button className="delete-btn">
-            <MdDeleteOutline />
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>Onyx</td>
-        <td>
-          <span className="status low-stock">Estoque Baixo</span>
-        </td>
-        <td>9</td>
-        <td>10,00 R$</td>
-        <td>2024-06-12</td>
-        <td>
-          <button className="edit-btn">
-            <FiEdit3 />
-          </button>
-          <button className="delete-btn">
-            <MdDeleteOutline />
-          </button>
-        </td>
-      </tr>
+      {filteredItems.map((item) => (
+        <tr key={item.id}>
+          <td>{item.id}</td>
+          <td>{item.name}</td>
+          <td>
+            <span className={`status ${item.stockStatus}`}>
+              {item.stockStatus.replace("-", " ")}
+            </span>
+          </td>
+          <td>{item.quantity}</td>
+          {item.hasDiscount ? (
+            <td>
+              <del>{item.price}</del>
+              <span className="new-price">&nbsp;{item.priceNew}</span>
+            </td>
+          ) : (
+            <td>{item.price}</td>
+          )}
+          <td>{item.purchaseDate}</td>
+          <td>
+            <button className="edit-btn">
+              <FiEdit3 />
+            </button>
+            <button className="delete-btn">
+              <MdDeleteOutline />
+            </button>
+          </td>
+        </tr>
+      ))}
     </>
   );
 }

@@ -14,17 +14,17 @@
   object-fit: cover;
 }
 
-.in-stock {
+.em-estoque {
   background-color: #9fba97;
   color: #528844;
 }
 
-.low-stock {
+.baixo-estoque {
   background-color: #fdd39c;
   color: #c77415;
 }
 
-.out-of-stock {
+.sem-estoque {
   background-color: #dad8db;
   color: #5d565f;
 }
