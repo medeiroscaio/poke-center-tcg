@@ -4,6 +4,7 @@ import loginBackground from "../assets/login-background.mp4";
 
 const LoginComponent = () => {
   const [isSignUpMode, setIsSignUpMode] = useState(false);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const regexEmail = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
@@ -15,6 +16,10 @@ const LoginComponent = () => {
       return <h4>Email inválido!</h4>;
     }
     return null;
+  };
+
+  const handleNameChange = (e) => {
+    setName({value: e.target.value, dirty:true})
   };
 
   const handleEmailChange = (e) => {
@@ -51,7 +56,10 @@ const LoginComponent = () => {
               </a>
             </div>
             <span>ou use seu email para se registrar</span>
-            <input type="text" placeholder="Nome" />
+            <input type="text" placeholder="Nome" 
+              onChange={(e) => {handleNameChange(e)}}
+            />
+            {loginValidate(name)}
             <input
               type="email"
               onChange={(e) => {handleEmailChange(e)}}
@@ -64,7 +72,9 @@ const LoginComponent = () => {
               placeholder="Senha"
             />
             {loginValidate(password)}
-            <button>Criar Conta</button>
+            <button
+            onClick={() => {setIsSignUpMode(true); setPassword,setEmail,setName({value: '', dirty: false})}}
+            >Criar Conta</button>
           </form>
         </div>
 
@@ -111,7 +121,7 @@ const LoginComponent = () => {
               <button
                 className="ghost"
                 id="signIn"
-                onClick={() => setIsSignUpMode(false)}
+                onClick={() => {setIsSignUpMode(false); setPassword,setEmail,setName({value: '', dirty: false})}}
               >
                 Entrar
               </button>
@@ -122,7 +132,7 @@ const LoginComponent = () => {
               <button
                 className="ghost"
                 id="signUp"
-                onClick={() => setIsSignUpMode(true)}
+                onClick={() => {setIsSignUpMode(true)}}
               >
                 Criar Conta
               </button>
