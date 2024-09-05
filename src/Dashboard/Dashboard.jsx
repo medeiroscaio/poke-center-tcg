@@ -62,14 +62,23 @@ export function LineChartComponent() {
 function Dashboard() {
   return (
     <Container>
-      <h1>Good evening, fido</h1>
-      <h3>Analytics overview</h3>
-      <div className="container">
+      <div className="dashboard-header">
+        <h1>Good evening, fido</h1>
+        <h3>Analytics overview</h3>
+      </div>
+      <div className="dashboard-panel">
         <div className="square">
-          Input <br /> 5
+          Stock total <br /> 85963
         </div>
-        <div className="square">Output</div>
-        <div className="square">Placeholder</div>
+        <div className="square">
+          Input <br /> 7564
+        </div>
+        <div className="square">
+          Output <br /> 13654
+        </div>
+        <div className="square">
+          Stock total <br /> 5
+        </div>
       </div>
       <div className="charts-container">
         <div className="chart">

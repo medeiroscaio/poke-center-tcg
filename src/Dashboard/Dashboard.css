@@ -1,13 +1,29 @@
-.container {
+:root {
+  --lightgreen: #9db896;
+  --green: #5a904c; 
+  --lightred: #c56565; 
+  --red: #996053;
+  --lightyellow: #f9d29b;   
+  --yellow: #d48f35; 
+  --lightgrey: #f0f0f0; 
+  --grey: #716a71; 
+}
+
+.dashboard-header{
+  color: black;
+}
+
+.dashboard-panel{
   display: flex;
   justify-content: center;
   gap: 20px;
+  padding: 12px 0 12px 0;
 }
 
 .square {
-  width: 120px;
+  width: 295px;
   height: 120px;
-  background-color: #3498db;
+  background-color: var(--lightgreen);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -28,4 +44,5 @@
   flex: 1;
   margin: 10px;
   min-width: 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
