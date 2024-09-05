@@ -48,8 +48,13 @@
 }
 
 .item-table {
-  width: 100%;
-  border-collapse: collapse;
+  height: 500px;
+  overflow: hidden;
+  overflow-y: scroll;
+    & table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 }
 
 .item-table th {
@@ -59,6 +64,9 @@
 }
 
 .item-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   background-color: #f2f2f2;
   font-weight: 600;
   color: #333;

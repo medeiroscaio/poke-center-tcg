@@ -24,22 +24,24 @@ function Table() {
           </div>
         </div>
       </div>
-      <table className="item-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nome da carta</th>
-            <th>Estado do estoque</th>
-            <th>Quantidade estoque</th>
-            <th>Preço</th>
-            <th>Data de compra</th>
-            <th>Ação</th>
-          </tr>
-        </thead>
-        <tbody>
-          <Item searchFilter={search} />
-        </tbody>
-      </table>
+      <div className="item-table">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome da carta</th>
+              <th>Estado do estoque</th>
+              <th>Quantidade estoque</th>
+              <th>Preço</th>
+              <th>Data de compra</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <Item searchFilter={search} />
+          </tbody>
+        </table>
+      </div>
     </Container>
   );
 }
