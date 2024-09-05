@@ -12,18 +12,28 @@ export const columnData = [
   ["Ultra rare", 5, "color: #996053"],
 ];
 
-export const pieData = [
-  ["Raridade", "Quantidade"],
-  ["Comum", 30],
-  ["Incomum", 20],
-  ["Raro", 15],
-  ["Promocional", 10],
-  ["Ultra raro", 5],
+export const lineData = [
+  ["x", "dogs", "cats"],
+  [0, 0, 0],
+  [1, 10, 5],
+  [2, 23, 15],
+  [3, 17, 9],
+  [4, 18, 10],
+  [5, 9, 5],
+  [6, 11, 3],
+  [7, 27, 19],
 ];
 
-export const pieOptions = {
-  title: "Cards in Stock",
-  is3D: true,
+export const lineOptions = {
+  hAxis: {
+    title: "Time",
+  },
+  vAxis: {
+    title: "Popularity",
+  },
+  series: {
+    1: { curveType: "function" },
+  },
 };
 
 export function ColumnChartComponent() {
@@ -37,15 +47,14 @@ export function ColumnChartComponent() {
   );
 }
 
-export function PieChartComponent() {
+export function LineChartComponent() {
   return (
     <Chart
-      chartType="PieChart"
-      data={pieData}
-      options={pieOptions}
+      chartType="LineChart"
       width="100%"
       height="400px"
-      is3D:true
+      data={lineData}
+      options={lineOptions}
     />
   );
 }
@@ -53,21 +62,30 @@ export function PieChartComponent() {
 function Dashboard() {
   return (
     <Container>
-      <h1>Good evening, fido</h1>
-      <h3>Analytics overview</h3>
-      <div className="container">
+      <div className="dashboard-header">
+        <h1>Good evening, fido</h1>
+        <h3>Analytics overview</h3>
+      </div>
+      <div className="dashboard-panel">
         <div className="square">
-          Input <br /> 5
+          Stock total <br /> 85963
         </div>
-        <div className="square">Output</div>
-        <div className="square">Placeholder</div>
+        <div className="square">
+          Input <br /> 7564
+        </div>
+        <div className="square">
+          Output <br /> 13654
+        </div>
+        <div className="square">
+          Stock total <br /> 5
+        </div>
       </div>
       <div className="charts-container">
         <div className="chart">
           <ColumnChartComponent />
         </div>
         <div className="chart">
-          <PieChartComponent />
+          <LineChartComponent />
         </div>
       </div>
     </Container>
