@@ -12,18 +12,28 @@ export const columnData = [
   ["Ultra rare", 5, "color: #996053"],
 ];
 
-export const pieData = [
-  ["Raridade", "Quantidade"],
-  ["Comum", 30],
-  ["Incomum", 20],
-  ["Raro", 15],
-  ["Promocional", 10],
-  ["Ultra raro", 5],
+export const lineData = [
+  ["x", "dogs", "cats"],
+  [0, 0, 0],
+  [1, 10, 5],
+  [2, 23, 15],
+  [3, 17, 9],
+  [4, 18, 10],
+  [5, 9, 5],
+  [6, 11, 3],
+  [7, 27, 19],
 ];
 
-export const pieOptions = {
-  title: "Cards in Stock",
-  is3D: true,
+export const lineOptions = {
+  hAxis: {
+    title: "Time",
+  },
+  vAxis: {
+    title: "Popularity",
+  },
+  series: {
+    1: { curveType: "function" },
+  },
 };
 
 export function ColumnChartComponent() {
@@ -37,15 +47,14 @@ export function ColumnChartComponent() {
   );
 }
 
-export function PieChartComponent() {
+export function LineChartComponent() {
   return (
     <Chart
-      chartType="PieChart"
-      data={pieData}
-      options={pieOptions}
+      chartType="LineChart"
       width="100%"
       height="400px"
-      is3D:true
+      data={lineData}
+      options={lineOptions}
     />
   );
 }
@@ -67,7 +76,7 @@ function Dashboard() {
           <ColumnChartComponent />
         </div>
         <div className="chart">
-          <PieChartComponent />
+          <LineChartComponent />
         </div>
       </div>
     </Container>
