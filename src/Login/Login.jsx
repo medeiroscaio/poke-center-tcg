@@ -6,18 +6,22 @@ const LoginComponent = () => {
   const [isSignUpMode, setIsSignUpMode] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const regexEmail = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
 
-  const handleEmailChange = (e) => setEmail(e.target.value);
-  const handlePasswordChange = (e) => setPassword(e.target.value);
-
-  const loginValidate = (value, type = "password") => {
-    if (type === "email" && !/\S+@\S+\.\S+/.test(value)) {
-      return <p>Email inválido</p>;
-    }
-    if (type === "password" && value.length < 6) {
-      return <p>A senha deve ter no mínimo 6 caracteres</p>;
+  const loginValidate = (data, type) => {
+    if (!data.value && data.dirty) {
+      return <h4>Campo Obrigatório!</h4>;
+    } else if (!!data.value && type === 'email' && !regexEmail.test(data.value)) {
+      return <h4>Email inválido!</h4>;
     }
     return null;
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail({value: e.target.value, dirty:true})
+  };
+  const handlePasswordChange = (e) => {
+    setPassword({value: e.target.value, dirty:true})
   };
 
   return (
@@ -50,15 +54,13 @@ const LoginComponent = () => {
             <input type="text" placeholder="Nome" />
             <input
               type="email"
-              value={email}
-              onChange={handleEmailChange}
+              onChange={(e) => {handleEmailChange(e)}}
               placeholder="Email"
             />
-            {loginValidate(email, "email")}
+            {loginValidate(email, 'email')}
             <input
               type="password"
-              value={password}
-              onChange={handlePasswordChange}
+              onChange={(e) => {{handlePasswordChange(e)}}}
               placeholder="Senha"
             />
             {loginValidate(password)}
@@ -83,15 +85,13 @@ const LoginComponent = () => {
             <span>ou use sua conta</span>
             <input
               type="email"
-              value={email}
-              onChange={handleEmailChange}
+              onChange={(e) => {handleEmailChange(e)}}
               placeholder="Email"
             />
             {loginValidate(email, "email")}
             <input
               type="password"
-              value={password}
-              onChange={handlePasswordChange}
+              onChange={(e) => {handlePasswordChange(e)}}
               placeholder="Senha"
             />
             {loginValidate(password)}
