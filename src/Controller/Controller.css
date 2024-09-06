@@ -21,7 +21,7 @@
   height: 100vh;
   width: fit-content;
   padding: 10px 10px 10px 20px;
-  background: #9fba97;
+  background: var(--lightblack);
 
   button {
     width: fit-content;
@@ -29,7 +29,7 @@
     background: none;
     border: none;
     font-size: 40px;
-    color: white;
+    color: var(--white);
   }
 
   button:hover {

@@ -5,34 +5,55 @@ import { Chart } from "react-google-charts";
 
 export const columnData = [
   ["Rarity", "Outputs", { role: "style" }],
-  ["Commom", 30, "#b87333"],
+["Commom", 30, "#b87333"],
   ["Incommom", 20, "silver"],
   ["Rare", 15, "gold"],
-  ["Promocional", 10, "color: #e5e4e2"],
-  ["Ultra rare", 5, "color: #996053"],
+  ["Promocional", 10, "#e5e4e2"],
+  ["Ultra rare", 7, "#996053"], 
 ];
 
 export const lineData = [
-  ["x", "dogs", "cats"],
+  ["x", "Input", "Output"],
   [0, 0, 0],
   [1, 10, 5],
   [2, 23, 15],
-  [3, 17, 9],
-  [4, 18, 10],
+  [3, 17, 12],
+  [4, 18, 14],
   [5, 9, 5],
-  [6, 11, 3],
-  [7, 27, 19],
+  [6, 11, 7],
+  [7, 39, 20],
+  [8, 36, 25],
+  [9, 37, 22],
+  [10, 25, 20],
+  [11, 37, 30],
+  [12, 22, 20],
 ];
 
 export const lineOptions = {
-  hAxis: {
+  hAxis: { // Configurações de texto do eixo X
     title: "Time",
+    textStyle: { color: "#000000" },
+    titleTextStyle: { color: "#000000" },
   },
-  vAxis: {
-    title: "Popularity",
+  vAxis: { // Configurações de texto do eixo Y
+    title: "Quantity",
+    textStyle: { color: "#000000" }, 
+    titleTextStyle: { color: "#000000" },
   },
-  series: {
-    1: { curveType: "function" },
+  titleTextStyle: { color: "#000000" }, // Configurações de texto do chart V
+  legend: { textStyle: { color: "#000000" } },
+};
+
+export const columnOptions = {
+  titleTextStyle: { color: "#000000" }, // Configurações de texto do chart V
+  legend: { textStyle: { color: "#000000" } }, 
+  hAxis: { // Configurações de texto do eixo X
+    textStyle: { color: "#000000" },
+    titleTextStyle: { color: "#000000" },
+  },
+  vAxis: { // Configurações de texto do eixo Y
+    textStyle: { color: "#000000" },
+    titleTextStyle: { color: "#000000" },
   },
 };
 
@@ -43,6 +64,7 @@ export function ColumnChartComponent() {
       width="100%"
       height="400px"
       data={columnData}
+      options={columnOptions}
     />
   );
 }
@@ -85,7 +107,7 @@ function Dashboard() {
           <ColumnChartComponent />
         </div>
         <div className="chart">
-          <LineChartComponent />
+          <LineChartComponent/>
         </div>
       </div>
     </Container>
