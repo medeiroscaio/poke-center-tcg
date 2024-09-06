@@ -4,18 +4,18 @@ import { FaRegUser } from "react-icons/fa";
 
 function getDate() {
   const today = new Date();
-  let month = today.toLocaleString("default", { month: "short" });
+  let month = today.toLocaleString("en-US", { month: "short" });
   month = month.replace(".", "");
   const year = today.getFullYear();
   const date = today.getDate();
   var days = [
-    "Domingo",
-    "Segunda-feira",
-    "Terça-feira",
-    "Quarta-feira",
-    "Quinta-feira",
-    "Sexta-feira",
-    "Sábado",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
   ];
   const dayName = days[today.getDay()];
   return `${date} ${month} ${year}, ${dayName} `;

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Login.css";
 import loginBackground from "../assets/login-background.mp4";
+import { useNavigate } from "react-router-dom";
+
 
 const LoginComponent = () => {
   const [isSignUpMode, setIsSignUpMode] = useState(false);
@@ -8,6 +10,16 @@ const LoginComponent = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const regexEmail = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    if (email.value && password.value) {
+      navigate("/Admin"); 
+    } else {
+      setEmail({ ...email, dirty: true });
+      setPassword({ ...password, dirty: true });
+    }
+  };
 
   const loginValidate = (data, type) => {
     if (!data.value && data.dirty) {
@@ -112,7 +124,7 @@ const LoginComponent = () => {
             />
             {loginValidate(password)}
             <a href="#">Esqueceu sua senha?</a>
-            <button>Entrar</button>
+            <button onClick = {() => handleLogin()}>Entrar</button>
           </form>
         </div>
 

@@ -15,7 +15,7 @@ let items = [
     quantity: 20,
     price: 10,
     priceNew: 0,
-    purchaseDate: "2024-06-12",
+    purchaseDate: "06/09/2024",
     hasDiscount: false,
   },
   {
@@ -25,7 +25,7 @@ let items = [
     quantity: 18,
     price: 10,
     priceNew: 0,
-    purchaseDate: "2024-06-12",
+    purchaseDate: "06/09/2024",
     hasDiscount: false,
   },
   {
@@ -35,7 +35,7 @@ let items = [
     quantity: 8,
     price: 10,
     priceNew: 0,
-    purchaseDate: "2024-06-12",
+    purchaseDate: "06/09/2024",
     hasDiscount: false,
   },
   {
@@ -45,7 +45,7 @@ let items = [
     quantity: 0,
     price: 10,
     priceNew: 0,
-    purchaseDate: "2024-06-12",
+    purchaseDate: "06/09/2024",
     hasDiscount: false,
   },
   {
@@ -55,7 +55,7 @@ let items = [
     quantity: 5,
     price: 10,
     priceNew: 0,
-    purchaseDate: "2024-06-12",
+    purchaseDate: "06/09/2024",
     hasDiscount: true,
   },
   {
@@ -65,7 +65,7 @@ let items = [
     quantity: 9,
     price: 10,
     priceNew: 0,
-    purchaseDate: "2024-06-12",
+    purchaseDate: "06/09/2024",
     hasDiscount: false,
   }
 ];

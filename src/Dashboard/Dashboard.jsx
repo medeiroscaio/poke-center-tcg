@@ -1,5 +1,5 @@
 import "./Dashboard.css";
-import Container from "../components/Container/container.jsx";
+import Container from "../components/Container/Container.jsx";
 import React from "react";
 import { Chart } from "react-google-charts";
 
@@ -85,7 +85,7 @@ function Dashboard() {
   return (
     <Container>
       <div className="dashboard-header">
-        <h1>Good evening, fido</h1>
+        <h1>Good evening, Neto</h1>
         <h3>Analytics overview</h3>
       </div>
       <div className="dashboard-panel">
