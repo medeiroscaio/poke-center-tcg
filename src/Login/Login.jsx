@@ -29,6 +29,12 @@ const LoginComponent = () => {
     setPassword({value: e.target.value, dirty:true})
   };
 
+  const resetFields = () => {
+    setEmail({value: "", dirty: false})
+    setPassword({value: "", dirty: false})
+    setName({value: "", dirty: false})
+  }
+
   return (
     <div className="login-principal">
       <div
@@ -73,7 +79,7 @@ const LoginComponent = () => {
             />
             {loginValidate(password)}
             <button
-            onClick={() => {setIsSignUpMode(true); setPassword,setEmail,setName({value: '', dirty: false})}}
+            onClick={() => {setIsSignUpMode(true);}}
             >Criar Conta</button>
           </form>
         </div>
@@ -121,7 +127,7 @@ const LoginComponent = () => {
               <button
                 className="ghost"
                 id="signIn"
-                onClick={() => {setIsSignUpMode(false); setPassword,setEmail,setName({value: '', dirty: false})}}
+                onClick={() => {setIsSignUpMode(false), resetFields()}}
               >
                 Entrar
               </button>
@@ -132,7 +138,7 @@ const LoginComponent = () => {
               <button
                 className="ghost"
                 id="signUp"
-                onClick={() => {setIsSignUpMode(true)}}
+                onClick={() => {setIsSignUpMode(true), resetFields()}}
               >
                 Criar Conta
               </button>
