@@ -5,11 +5,11 @@ import { Chart } from "react-google-charts";
 
 export const columnData = [
   ["Rarity", "Outputs", { role: "style" }],
-["Commom", 30, "#b87333"],
+  ["Commom", 30, "#b87333"],
   ["Incommom", 20, "silver"],
   ["Rare", 15, "gold"],
   ["Promocional", 10, "#e5e4e2"],
-  ["Ultra rare", 7, "#996053"], 
+  ["Ultra rare", 7, "#996053"],
 ];
 
 export const lineData = [
@@ -30,14 +30,16 @@ export const lineData = [
 ];
 
 export const lineOptions = {
-  hAxis: { // Configurações de texto do eixo X
+  hAxis: {
+    // Configurações de texto do eixo X
     title: "Time",
     textStyle: { color: "#000000" },
     titleTextStyle: { color: "#000000" },
   },
-  vAxis: { // Configurações de texto do eixo Y
+  vAxis: {
+    // Configurações de texto do eixo Y
     title: "Quantity",
-    textStyle: { color: "#000000" }, 
+    textStyle: { color: "#000000" },
     titleTextStyle: { color: "#000000" },
   },
   titleTextStyle: { color: "#000000" }, // Configurações de texto do chart V
@@ -46,12 +48,14 @@ export const lineOptions = {
 
 export const columnOptions = {
   titleTextStyle: { color: "#000000" }, // Configurações de texto do chart V
-  legend: { textStyle: { color: "#000000" } }, 
-  hAxis: { // Configurações de texto do eixo X
+  legend: { textStyle: { color: "#000000" } },
+  hAxis: {
+    // Configurações de texto do eixo X
     textStyle: { color: "#000000" },
     titleTextStyle: { color: "#000000" },
   },
-  vAxis: { // Configurações de texto do eixo Y
+  vAxis: {
+    // Configurações de texto do eixo Y
     textStyle: { color: "#000000" },
     titleTextStyle: { color: "#000000" },
   },
@@ -90,16 +94,20 @@ function Dashboard() {
       </div>
       <div className="dashboard-panel">
         <div className="square">
-          Stock total <br /> 85963
+          <span className="number">85963</span>
+          <span className="text">Stock total</span>
         </div>
         <div className="square">
-          Input <br /> 7564
+          <span className="number">7564</span>
+          <span className="text">Input</span>
         </div>
         <div className="square">
-          Output <br /> 13654
+          <span className="number">13654</span>
+          <span className="text">Output</span>
         </div>
         <div className="square">
-          Stock total <br /> 5
+          <span className="number">5</span>
+          <span className="text">Stock total</span>
         </div>
       </div>
       <div className="charts-container">
@@ -107,7 +115,7 @@ function Dashboard() {
           <ColumnChartComponent />
         </div>
         <div className="chart">
-          <LineChartComponent/>
+          <LineChartComponent />
         </div>
       </div>
     </Container>

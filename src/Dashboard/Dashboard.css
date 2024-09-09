@@ -1,16 +1,12 @@
-.dashboard-header{
-  color: black;
-}
-
-.dashboard-panel{
-  display: flex;
-  justify-content: center;
+.dashboard-panel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1%;
-  padding: 12px 0 12px 0;
+  padding: 12px 0;
 }
 
 .square {
-  width: 23.9%;
+  position: relative;
   height: 120px;
   background-color: var(--white);
   color: var(--black);
@@ -20,18 +16,31 @@
   font-size: 18px;
   text-align: center;
   border-radius: 2px;
-  border: 1px solid rgba(0,0,0,.125);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.square .number {
+  font-size: 25px;
+}
+
+.square .text {
+  font-size: 25px;
+  position: absolute;
+  top: 0px;
+  left: 8px; 
+  font-size: 25px;
+  font-weight: 550;
 }
 
 .charts-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1%;
+  align-items: start;
 }
 
 .chart {
   flex: 1;
-  margin: 10px;
   min-width: 0;
   border: 1px solid rgba(0,0,0,.125);
 }
