@@ -2,6 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 10.6vh;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: var(--lightgrey);
+  padding: 10px 20px 10px 20px;
 }
 
 .user-info {
@@ -12,8 +16,20 @@
 
 #hour {
   margin-right: 10px;
+  font-size: 20px;
 }
 
 #user-icon {
   font-size: 25px;
+  height: 34px;
+}
+
+#user-welcome{
+  display: flex;
+  flex-direction: column;
+}
+
+#welcome{
+  font-weight: 600;
+  font-size: 30px;
 }
