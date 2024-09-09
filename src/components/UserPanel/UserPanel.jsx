@@ -4,18 +4,18 @@ import { FaRegUser } from "react-icons/fa";
 
 function getDate() {
   const today = new Date();
-  let month = today.toLocaleString("en-US", { month: "short" });
+  let month = today.toLocaleString("pt-BR", { month: "short" });
   month = month.replace(".", "");
   const year = today.getFullYear();
   const date = today.getDate();
   var days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    "Domingo",
+    "Segunda-feira",
+    "Terça-feira",
+    "Quarta-feira",
+    "Quinta-feira",
+    "Sexta-feira",
+    "Sábado",
   ];
   const dayName = days[today.getDay()];
   return `${date} ${month} ${year}, ${dayName} `;
@@ -50,7 +50,10 @@ const UserPanel = () => {
 
   return (
     <div className="user-control">
-      <span id="date">{currentDate}</span>
+      <div id="user-welcome">
+      <span id="welcome">Boa Noite, Usuário</span>
+      <span>{currentDate}</span>
+      </div>
       <div className="user-info">
         <span id="hour">{currentTime}</span>
         <span id="user-icon">

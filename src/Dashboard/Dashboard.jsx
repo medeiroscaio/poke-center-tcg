@@ -89,7 +89,7 @@ function Dashboard() {
   return (
     <Container>
       <div className="dashboard-header">
-        <h1>Good evening, Neto</h1>
+        <h1>Dashboard</h1>
         <h3>Analytics overview</h3>
       </div>
       <div className="dashboard-panel">

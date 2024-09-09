@@ -1,5 +1,7 @@
 .page-container {
-  min-height: 100vh;
+  min-height: 89.4vh;
+  justify-content: center;
+  align-items: center;
   background-color: var(--lightgrey);
   padding: 20px;
 }

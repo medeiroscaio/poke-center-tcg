@@ -92,7 +92,7 @@ function Table() {
   return (
     <Container>
       <div className="table-header">
-        <h2>Cards</h2>
+        <h2>Tabela</h2>
         <div className="header-end">
           <div className="table-header-btns">
             <button className="header-btn" onClick={openPopUp}> <span><IoIosAdd/></span> <p>Cadastrar Cartas</p> </button>

@@ -23,8 +23,6 @@
 
 .table-header h2 {
   font-size: 35px;
-  font-weight: 600;
-  color: #333;
 }
 
 .header-btn {
@@ -60,7 +58,7 @@
 .item-table {
   background-color: white;
   border: 1px solid rgba(0,0,0,.125);
-  height: 81.8vh;
+  height: 74.5vh;
   overflow: hidden;
   overflow-y: scroll;
     & table {
