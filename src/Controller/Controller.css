@@ -13,6 +13,7 @@
 #content {
   width: 100%;
   background-color: #f4f4f4;
+  padding-left: 80px;
 }
 
 #side-bar {
@@ -20,22 +21,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  height: 100%;
   width: 80px;
   background: var(--lightblack);
-  padding: 10px 0;
-  transition: all 0.3s ease;
+  gap: 20px;
 }
 
 #side-bar button {
   display: flex;
-  justify-content: center;
-  align-items: center;
   width: 60px;
   height: 60px;
-  margin-bottom: 20px;
   background: none;
-  border: none;
   font-size: 40px;
   color: var(--white);
   cursor: pointer;
@@ -45,7 +43,6 @@
 #side-bar button:hover {
   background-color: var(--hover-bg);
   border-radius: 50%;
-  transform: scale(1.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -53,18 +50,17 @@
   transform: scale(0.95);
 }
 
-#side-bar button svg {
-  pointer-events: none;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 830px) {
   #side-bar {
-    width: 60px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    height: 80px;
+    width: 100vw;
+    flex-direction: row;
   }
-
-  #side-bar button {
-    width: 50px;
-    height: 50px;
-    font-size: 30px;
+  #content {
+    padding-left: 0;
+    padding-bottom: 80px;
   }
 }
