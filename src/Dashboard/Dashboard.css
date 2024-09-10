@@ -27,20 +27,7 @@
   font-size: 25px;
   position: absolute;
   top: 0px;
-  left: 8px; 
+  left: 8px;
   font-size: 25px;
   font-weight: 550;
-}
-
-.charts-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1%;
-  align-items: start;
-}
-
-.chart {
-  flex: 1;
-  min-width: 0;
-  border: 1px solid rgba(0,0,0,.125);
 }
