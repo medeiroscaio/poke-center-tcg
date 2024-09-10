@@ -7,10 +7,12 @@
 #controller {
   display: flex;
   flex-direction: row;
+  height: 100vh;
 }
 
 #content {
   width: 100%;
+  background-color: #f4f4f4;
 }
 
 #side-bar {
@@ -19,22 +21,50 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: fit-content;
-  padding: 10px 10px 10px 20px;
+  width: 80px;
   background: var(--lightblack);
+  padding: 10px 0;
+  transition: all 0.3s ease;
+}
 
-  button {
-    width: fit-content;
-    height: fit-content;
-    background: none;
-    border: none;
-    font-size: 40px;
-    color: var(--white);
+#side-bar button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#side-bar button:hover {
+  background-color: var(--hover-bg);
+  border-radius: 50%;
+  transform: scale(1.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#side-bar button:active {
+  transform: scale(0.95);
+}
+
+#side-bar button svg {
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  #side-bar {
+    width: 60px;
   }
 
-  button:hover {
-    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
-    opacity: 0.8;
-    scale: 1;
+  #side-bar button {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
   }
 }

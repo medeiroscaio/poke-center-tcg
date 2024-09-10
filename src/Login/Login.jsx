@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import "./Login.css";
 import loginBackground from "../assets/login-background.mp4";
 import { useNavigate } from "react-router-dom";
-
+import { FaGithub } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const LoginComponent = () => {
   const [isSignUpMode, setIsSignUpMode] = useState(false);
@@ -14,7 +16,7 @@ const LoginComponent = () => {
 
   const handleLogin = () => {
     if (email.value && password.value) {
-      navigate("/Admin"); 
+      navigate("/Admin");
     } else {
       setEmail({ ...email, dirty: true });
       setPassword({ ...password, dirty: true });
@@ -24,28 +26,32 @@ const LoginComponent = () => {
   const loginValidate = (data, type) => {
     if (!data.value && data.dirty) {
       return <h4>Campo Obrigatório!</h4>;
-    } else if (!!data.value && type === 'email' && !regexEmail.test(data.value)) {
+    } else if (
+      !!data.value &&
+      type === "email" &&
+      !regexEmail.test(data.value)
+    ) {
       return <h4>Email inválido!</h4>;
     }
     return null;
   };
 
   const handleNameChange = (e) => {
-    setName({value: e.target.value, dirty:true})
+    setName({ value: e.target.value, dirty: true });
   };
 
   const handleEmailChange = (e) => {
-    setEmail({value: e.target.value, dirty:true})
+    setEmail({ value: e.target.value, dirty: true });
   };
   const handlePasswordChange = (e) => {
-    setPassword({value: e.target.value, dirty:true})
+    setPassword({ value: e.target.value, dirty: true });
   };
 
   const resetFields = () => {
-    setEmail({value: "", dirty: false})
-    setPassword({value: "", dirty: false})
-    setName({value: "", dirty: false})
-  }
+    setEmail({ value: "", dirty: false });
+    setPassword({ value: "", dirty: false });
+    setName({ value: "", dirty: false });
+  };
 
   return (
     <div className="login-principal">
@@ -64,35 +70,49 @@ const LoginComponent = () => {
             <h1>Criar Conta</h1>
             <div className="social-container">
               <a href="#" className="social">
-                <i className="fab fa-facebook-f"></i>
+                <FaGithub />
               </a>
               <a href="#" className="social">
-                <i className="fab fa-google-plus-g"></i>
+                <FaGoogle />
               </a>
               <a href="#" className="social">
-                <i className="fab fa-linkedin-in"></i>
+                <FaFacebook />
               </a>
             </div>
             <span>ou use seu email para se registrar</span>
-            <input type="text" placeholder="Nome" 
-              onChange={(e) => {handleNameChange(e)}}
+            <input
+              type="text"
+              placeholder="Nome"
+              onChange={(e) => {
+                handleNameChange(e);
+              }}
             />
             {loginValidate(name)}
             <input
               type="email"
-              onChange={(e) => {handleEmailChange(e)}}
+              onChange={(e) => {
+                handleEmailChange(e);
+              }}
               placeholder="Email"
             />
-            {loginValidate(email, 'email')}
+            {loginValidate(email, "email")}
             <input
               type="password"
-              onChange={(e) => {{handlePasswordChange(e)}}}
+              onChange={(e) => {
+                {
+                  handlePasswordChange(e);
+                }
+              }}
               placeholder="Senha"
             />
             {loginValidate(password)}
             <button
-            onClick={() => {setIsSignUpMode(true);}}
-            >Criar Conta</button>
+              onClick={() => {
+                setIsSignUpMode(true);
+              }}
+            >
+              Criar Conta
+            </button>
           </form>
         </div>
 
@@ -101,30 +121,34 @@ const LoginComponent = () => {
             <h1>Entrar</h1>
             <div className="social-container">
               <a href="#" className="social">
-                <i className="fab fa-facebook-f"></i>
+                <FaGithub />
               </a>
               <a href="#" className="social">
-                <i className="fab fa-google-plus-g"></i>
+                <FaGoogle />
               </a>
               <a href="#" className="social">
-                <i className="fab fa-linkedin-in"></i>
+                <FaFacebook />
               </a>
             </div>
             <span>ou use sua conta</span>
             <input
               type="email"
-              onChange={(e) => {handleEmailChange(e)}}
+              onChange={(e) => {
+                handleEmailChange(e);
+              }}
               placeholder="Email"
             />
             {loginValidate(email, "email")}
             <input
               type="password"
-              onChange={(e) => {handlePasswordChange(e)}}
+              onChange={(e) => {
+                handlePasswordChange(e);
+              }}
               placeholder="Senha"
             />
             {loginValidate(password)}
             <a href="#">Esqueceu sua senha?</a>
-            <button onClick = {() => handleLogin()}>Entrar</button>
+            <button onClick={() => handleLogin()}>Entrar</button>
           </form>
         </div>
 
@@ -139,7 +163,9 @@ const LoginComponent = () => {
               <button
                 className="ghost"
                 id="signIn"
-                onClick={() => {setIsSignUpMode(false), resetFields()}}
+                onClick={() => {
+                  setIsSignUpMode(false), resetFields();
+                }}
               >
                 Entrar
               </button>
@@ -150,7 +176,9 @@ const LoginComponent = () => {
               <button
                 className="ghost"
                 id="signUp"
-                onClick={() => {setIsSignUpMode(true), resetFields()}}
+                onClick={() => {
+                  setIsSignUpMode(true), resetFields();
+                }}
               >
                 Criar Conta
               </button>
