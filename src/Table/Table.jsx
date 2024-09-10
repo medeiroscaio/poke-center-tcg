@@ -86,7 +86,7 @@ function Table() {
   return (
     <Container>
       <div className="table-header">
-        <h2>Tabela</h2>
+        <h1>Tabela</h1>
         <div className="header-end">
           <div className="table-header-btns">
             <button className="header-btn" onClick={openPopUp}>
