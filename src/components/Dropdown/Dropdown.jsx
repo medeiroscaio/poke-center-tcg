@@ -47,7 +47,14 @@ const Dropdown = () => {
           setOpen(!open);
         }}
       >
-        <img src={userProfile} />
+        <img
+          src={
+            imageProfile === "" || imageProfile === null
+              ? userProfile
+              : imageProfile
+          }
+          alt="Profile"
+        />
       </div>
       <div className={`dropdown-menu ${open ? "active" : "inactive"}`}>
         <h3>
@@ -57,8 +64,7 @@ const Dropdown = () => {
         </h3>
 
         <ul>
-          <DropdownItem icon={<CiImageOn />}>
-            {" "}
+          <DropdownItem icon={<CiImageOn onClick={triggerFileUpload} />}>
             <input
               id="file-input"
               type="file"
@@ -66,6 +72,7 @@ const Dropdown = () => {
               onChange={convertToBase64}
               style={{ display: "none" }}
             />
+            <a>Mudar imagem</a>
           </DropdownItem>
           <DropdownItem icon={<CiLogout />}>
             <a>Log Out</a>
