@@ -1,33 +1,42 @@
-import React, {useEffect, useState} from 'react';
-import './DeletePopUp.css';
+import React, { useEffect, useState } from "react";
+import "./DeletePopUp.css";
 
-const RegisterProductPopUp = ({ isOpen, onClose, getItems, deleteItem, itemID}) => {
+const RegisterProductPopUp = ({
+  isOpen,
+  onClose,
+  getItems,
+  deleteItem,
+  itemID,
+}) => {
+  const handleClose = () => {
+    onClose();
+  };
 
-    const handleClose = () => {
-        onClose()
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const index = getItems().findIndex((item) => item.id === itemID);
+    deleteItem(index);
+    console.log("Produto Deletado:", index);
+    handleClose();
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const index = getItems().findIndex(item => item.id === itemID);
-        deleteItem(index);
-        console.log('Produto Deletado:', index);
-        handleClose() // Fecha o popup após o registro
-    };
+  if (!isOpen) return null;
 
-    if (!isOpen) return null;
-
-    return (
-        <div className="popup-overlay">
-            <div className="popup-content">
-                <h3>Você Realmente quer deletar esse item?</h3>
-                    <div className="button-group">
-                        <button type="submit" onClick={handleSubmit}>Deletar</button>
-                        <button type="button" onClick={handleClose}>Fechar</button>
-                    </div>
-            </div>
+  return (
+    <div className="popup-overlay">
+      <div className="popup-content">
+        <h3>Você Realmente quer deletar esse item?</h3>
+        <div className="button-group">
+          <button type="submit" onClick={handleSubmit}>
+            Deletar
+          </button>
+          <button type="button" onClick={handleClose}>
+            Fechar
+          </button>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default RegisterProductPopUp;

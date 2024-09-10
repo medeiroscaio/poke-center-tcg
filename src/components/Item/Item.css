@@ -1,10 +1,10 @@
 .status {
   padding: 6.5px 10px;
-  border-radius: 10px;
+  border-radius: 2px;
   font-size: 14px;
   font-weight: 500;
   display: inline-block;
-  width: 115px;
+  width: 130px;
   color: #fff;
 }
 

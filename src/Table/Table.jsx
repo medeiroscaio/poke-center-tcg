@@ -11,7 +11,7 @@ let items = [
   {
     id: 1,
     name: "Bulbasaur",
-    stockStatus: "em-estoque",
+    stockStatus: "Dísponivel",
     quantity: 20,
     price: 10,
     priceNew: 0,
@@ -21,7 +21,7 @@ let items = [
   {
     id: 2,
     name: "Charmander",
-    stockStatus: "em-estoque",
+    stockStatus: "Dísponivel",
     quantity: 18,
     price: 10,
     priceNew: 0,
@@ -31,7 +31,7 @@ let items = [
   {
     id: 3,
     name: "Squirtle",
-    stockStatus: "baixo-estoque",
+    stockStatus: "Poucas Unidades",
     quantity: 8,
     price: 10,
     priceNew: 0,
@@ -41,7 +41,7 @@ let items = [
   {
     id: 4,
     name: "Caterpie",
-    stockStatus: "sem-estoque",
+    stockStatus: "Esgotado",
     quantity: 0,
     price: 10,
     priceNew: 0,
@@ -51,7 +51,7 @@ let items = [
   {
     id: 5,
     name: "Pikachu",
-    stockStatus: "baixo-estoque",
+    stockStatus: "Poucas unidades",
     quantity: 5,
     price: 10,
     priceNew: 0,
@@ -61,33 +61,27 @@ let items = [
   {
     id: 6,
     name: "Onyx",
-    stockStatus: "baixo-estoque",
+    stockStatus: "Poucas unidades",
     quantity: 9,
     price: 10,
     priceNew: 0,
     purchaseDate: "06/09/2024",
     hasDiscount: false,
-  }
+  },
 ];
 
 function Table() {
-  
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [isPopUpOpen, setPopUpOpen] = useState(false);
   const openPopUp = () => setPopUpOpen(true);
   const closePopUp = () => setPopUpOpen(false);
 
-
   const addItem = (newItem) => items.push(newItem);
-  const getItems = () => items
+  const getItems = () => items;
   const updateItem = (oldItem, newItem) => {
-    items = items.map(item =>
-        (item.id === oldItem.id) ? newItem : item
-    );
+    items = items.map((item) => (item.id === oldItem.id ? newItem : item));
   };
   const deleteItem = (index) => items.splice(index, 1);
-
-
 
   return (
     <Container>
@@ -95,8 +89,20 @@ function Table() {
         <h2>Tabela</h2>
         <div className="header-end">
           <div className="table-header-btns">
-            <button className="header-btn" onClick={openPopUp}> <span><IoIosAdd/></span> <p>Cadastrar Cartas</p> </button>
-            <button className="header-btn"> <span><LuDatabaseBackup/></span> <p>Recuperar Cartas</p> </button>
+            <button className="header-btn" onClick={openPopUp}>
+              {" "}
+              <span>
+                <IoIosAdd />
+              </span>{" "}
+              <p>Cadastrar Cartas</p>{" "}
+            </button>
+            <button className="header-btn">
+              {" "}
+              <span>
+                <LuDatabaseBackup />
+              </span>{" "}
+              <p>Recuperar Cartas</p>{" "}
+            </button>
           </div>
           <div className="table-search-bar">
             {/* <button className="header-btn search-btn">Filtrar</button> */}
@@ -118,10 +124,21 @@ function Table() {
             </tr>
           </thead>
           <tbody>
-            <Item searchFilter={search} PopUpOpen={isPopUpOpen} getItems={getItems} updateItem={updateItem} deleteItem={deleteItem}/>
+            <Item
+              searchFilter={search}
+              PopUpOpen={isPopUpOpen}
+              getItems={getItems}
+              updateItem={updateItem}
+              deleteItem={deleteItem}
+            />
           </tbody>
         </table>
-        <RegisterProductPopUp isOpen={isPopUpOpen} onClose={closePopUp} addItem = {addItem} getItems = {getItems}/>
+        <RegisterProductPopUp
+          isOpen={isPopUpOpen}
+          onClose={closePopUp}
+          addItem={addItem}
+          getItems={getItems}
+        />
       </div>
     </Container>
   );
