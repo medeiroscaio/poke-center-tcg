@@ -93,7 +93,7 @@ const lineData = {
       name: "Input",
       data: [0, 10, 23, 17, 18, 9, 11, 39, 36, 37, 25, 37, 22],
       type: "line",
-      smooth: true,
+      smooth: false,
       symbol: "circle",
       symbolSize: 8,
       itemStyle: {
@@ -104,7 +104,7 @@ const lineData = {
       name: "Output",
       data: [0, 5, 15, 12, 14, 5, 7, 20, 25, 22, 20, 30, 20],
       type: "line",
-      smooth: true,
+      smooth: false,
       symbol: "circle",
       symbolSize: 8,
       itemStyle: {

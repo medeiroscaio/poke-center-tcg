@@ -5,6 +5,7 @@
   --lightblack: #36393e;
   --primary: #3498db;
   --hover-bg: #c0c0c0;
+  --speed: 500ms;
 }
 
 * {

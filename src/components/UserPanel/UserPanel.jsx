@@ -1,6 +1,6 @@
 import "./UserPanel.css";
 import React, { useState, useEffect } from "react";
-import { FaRegUser } from "react-icons/fa";
+import Dropdown from "../Dropdown/Dropdown.jsx"
 
 function getDate() {
   const today = new Date();
@@ -65,9 +65,7 @@ const UserPanel = () => {
       </div>
       <div className="user-info">
         <span id="hour">{currentTime}</span>
-        <span id="user-icon">
-          <FaRegUser />
-        </span>
+        <Dropdown/>
       </div>
     </div>
   );
