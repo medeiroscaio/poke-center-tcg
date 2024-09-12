@@ -13,19 +13,34 @@ function Controller() {
   return (
     <div id="controller">
       <div id="side-bar">
-        <button onClick={() => setView(1)}>
+        <button
+          onClick={() => setView(1)}
+          className={view === 1 ? "active" : ""}
+        >
           <MdHome />
         </button>
-        <button onClick={() => setView(2)}>
+        <button
+          onClick={() => setView(2)}
+          className={view === 2 ? "active" : ""}
+        >
           <BiSolidDashboard />
         </button>
-        <button onClick={() => setView(3)}>
+        <button
+          onClick={() => setView(3)}
+          className={view === 3 ? "active" : ""}
+        >
           <IoIosRadioButtonOn />
         </button>
-        <button onClick={() => setView(4)}>
+        <button
+          onClick={() => setView(4)}
+          className={view === 4 ? "active" : ""}
+        >
           <IoIosRadioButtonOn />
         </button>
-        <button onClick={() => setView(5)}>
+        <button
+          onClick={() => setView(5)}
+          className={view === 5 ? "active" : ""}
+        >
           <PiTrashFill />
         </button>
       </div>

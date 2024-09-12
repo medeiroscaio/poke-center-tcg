@@ -1,5 +1,5 @@
 import "./Dropdown.css";
-import userProfile from "../../assets/user-profile.jpg";
+import userProfile from "../../assets/user-profile.png";
 import { CiImageOn } from "react-icons/ci";
 import { CiLogout } from "react-icons/ci";
 import { useState } from "react";

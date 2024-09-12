@@ -5,6 +5,12 @@
   --lightblack: #36393e;
   --primary: #3498db;
   --hover-bg: #c0c0c0;
+  --lightblackb: #2c3e50;
+  --white: #ffffff;
+  --hover-bg: #34495e;
+  --hover-bg-active: #e5e4e2;
+  --active-bg: #899499;
+  --active-icon-color: #f1c40f;
   --speed: 500ms;
 }
 

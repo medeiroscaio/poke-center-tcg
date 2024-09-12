@@ -37,17 +37,27 @@
   font-size: 40px;
   color: var(--white);
   cursor: pointer;
-  transition: all 0.3s ease;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
 #side-bar button:hover {
   background-color: var(--hover-bg);
-  border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 
 #side-bar button:active {
-  transform: scale(0.95);
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: var(--hover-bg-active);
+}
+
+#side-bar button.active {
+  background-color: var(--active-bg);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  color: var(--white);
 }
 
 @media (max-width: 830px) {
