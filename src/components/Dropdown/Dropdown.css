@@ -8,9 +8,8 @@
   width: 60px;
   border-radius: 50%;
   border: 2px solid #ccc;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .dropdown-trigger img:hover {

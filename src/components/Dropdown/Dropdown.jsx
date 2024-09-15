@@ -1,82 +1,60 @@
+import React, { useState, useRef } from "react";
+import ProfileImageUploader from "../ProfileImageUploader/ProfileImageUploader";
+import { CiImageOn, CiLogout } from "react-icons/ci";
 import "./Dropdown.css";
-import userProfile from "../../assets/user-profile.png";
-import { CiImageOn } from "react-icons/ci";
-import { CiLogout } from "react-icons/ci";
-import { useState } from "react";
-
-function DropdownItem(props) {
-  return (
-    <li className="dropdown-item">
-      {props.icon && <span>{props.icon}</span>}
-      {props.children}
-    </li>
-  );
-}
 
 const Dropdown = () => {
   const [open, setOpen] = useState(false);
-
   const [imageProfile, SetimageProfile] = useState("");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const fileInputRef = useRef(null);
 
-  function convertToBase64(e) {
-    const file = e.target.files[0];
-
-    if (!file) {
-      return;
+  const toggleDropdown = () => {
+    if (!modalIsOpen) {
+      setOpen(!open);
     }
+  };
 
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      SetimageProfile(reader.result);
-    };
-    reader.onerror = (error) => {
-      console.log("Error:", error);
-    };
-  }
+  const handleOpenModal = () => {
+    setModalIsOpen(true);
+  };
 
-  const triggerFileUpload = () => {
-    document.getElementById("file-input").click();
+  const handleCloseModal = () => {
+    setModalIsOpen(false);
   };
 
   return (
     <div className="dropdown-container">
-      <div
-        className="dropdown-trigger"
-        onClick={() => {
-          setOpen(!open);
-        }}
-      >
-        <img
-          src={
-            imageProfile === "" || imageProfile === null
-              ? userProfile
-              : imageProfile
-          }
-          alt="Profile"
+      <div className="dropdown-trigger" onClick={toggleDropdown}>
+        <ProfileImageUploader
+          imageProfile={imageProfile}
+          SetimageProfile={SetimageProfile}
+          fileInputRef={fileInputRef}
+          modalIsOpen={modalIsOpen}
+          handleOpenModal={handleOpenModal}
+          handleCloseModal={handleCloseModal}
         />
       </div>
+
       <div className={`dropdown-menu ${open ? "active" : "inactive"}`}>
         <h3>
           Teste
           <br />
           <span>Teste</span>
         </h3>
-
         <ul>
-          <DropdownItem icon={<CiImageOn onClick={triggerFileUpload} />}>
-            <input
-              id="file-input"
-              type="file"
-              accept="image/*"
-              onChange={convertToBase64}
-              style={{ display: "none" }}
-            />
-            <a>Mudar imagem</a>
-          </DropdownItem>
-          <DropdownItem icon={<CiLogout />}>
+          <li className="dropdown-item">
+            <span>
+              <CiImageOn />
+            </span>
+            <a onClick={() => fileInputRef.current.click()}>Mudar imagem</a>
+          </li>
+          <li className="dropdown-item">
+            <span>
+              <CiLogout />
+            </span>
             <a>Log Out</a>
-          </DropdownItem>
+          </li>
         </ul>
       </div>
     </div>
