@@ -8,66 +8,6 @@ import { LuDatabaseBackup } from "react-icons/lu";
 import RegisterProductPopUp from "../components/PopUps/RegisterProductPopUp/RegisterProductPopUp.jsx";
 
 let items = [
-  {
-    id: 1,
-    name: "Bulbasaur",
-    stockStatus: "Dísponivel",
-    quantity: 20,
-    price: 10,
-    priceNew: 0,
-    purchaseDate: "06/09/2024",
-    hasDiscount: false,
-  },
-  {
-    id: 2,
-    name: "Charmander",
-    stockStatus: "Dísponivel",
-    quantity: 18,
-    price: 10,
-    priceNew: 0,
-    purchaseDate: "06/09/2024",
-    hasDiscount: false,
-  },
-  {
-    id: 3,
-    name: "Squirtle",
-    stockStatus: "Poucas Unidades",
-    quantity: 8,
-    price: 10,
-    priceNew: 0,
-    purchaseDate: "06/09/2024",
-    hasDiscount: false,
-  },
-  {
-    id: 4,
-    name: "Caterpie",
-    stockStatus: "Esgotado",
-    quantity: 0,
-    price: 10,
-    priceNew: 0,
-    purchaseDate: "06/09/2024",
-    hasDiscount: false,
-  },
-  {
-    id: 5,
-    name: "Pikachu",
-    stockStatus: "Poucas unidades",
-    quantity: 5,
-    price: 10,
-    priceNew: 0,
-    purchaseDate: "06/09/2024",
-    hasDiscount: true,
-  },
-  {
-    id: 6,
-    name: "Onyx",
-    stockStatus: "Poucas unidades",
-    quantity: 9,
-    price: 10,
-    priceNew: 0,
-    purchaseDate: "06/09/2024",
-    hasDiscount: false,
-  },
 ];
 
 function Table() {
