@@ -31,17 +31,10 @@ function Table() {
           <div className="table-header-btns">
             <button className="header-btn" onClick={openPopUp}>
               {" "}
+              <p>Cadastrar Cartas</p>{" "}
               <span>
                 <IoIosAdd />
               </span>{" "}
-              <p>Cadastrar Cartas</p>{" "}
-            </button>
-            <button className="header-btn">
-              {" "}
-              <span>
-                <LuDatabaseBackup />
-              </span>{" "}
-              <p>Recuperar Cartas</p>{" "}
             </button>
           </div>
           <div className="table-search-bar">
@@ -54,13 +47,15 @@ function Table() {
         <table>
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Nome da carta</th>
-              <th>Estado do estoque</th>
-              <th>Quantidade estoque</th>
-              <th>Preço</th>
-              <th>Data de compra</th>
-              <th>Ação</th>
+            <th>ID</th>
+            <th>Nome da carta</th>
+            <th>Categoria</th>
+            <th>Raridade</th>
+            <th>Estado do estoque</th>
+            <th>Quantidade estoque</th>
+            <th>Preço</th>
+            <th>Data de compra</th>
+            <th>Ação</th>
             </tr>
           </thead>
           <tbody>

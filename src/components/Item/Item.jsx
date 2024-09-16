@@ -37,6 +37,8 @@ function Item({ searchFilter = "", getItems, updateItem, deleteItem }) {
         <tr key={item.id}>
           <td>{item.id}</td>
           <td>{item.name}</td>
+          <td>{item.category}</td>
+          <td>{item.rarity}</td>
           <td>
             <span className={`status ${stockCalc(item.quantity)}`}>
               {item.stockStatus}
